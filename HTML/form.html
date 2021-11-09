@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <nav>
+        <a href="index.html"></a> |
+        <a href="body.html">Body</a> |
+        <a href="form.html">Form</a> |
+        <a href="head.html">Head</a> |
+        <a href="linkpage.html">Linkpage</a> |
+        <a href="pagestructure.html"Pagestructure></a> |
+        <a href="table.html">Table 1</a> |
+        <a href="table2.html">Table 2</a> |
+        <a href="table3.html">Table 3</a> |
+        <a href="../HTML/Link/Pages/about.html">About us</a> |
+        <a href="../HTML/Link/Pages/contact.html">Contact us</a> |
+        <a href="../HTML/Link/Pages/service.html">Services</a> |
+    </nav><br><br>
+
+    <form action="save.php" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="stu_name" id="name" placeholder="Enter your name" required><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="stu_email" id="email" placeholder="Enter your email" required><br><br>
+        <label for="password">Password</label>
+        <input type="text" name="stu_password" id="password" placeholder="Enter your password" required><br><br>
+        <label for="phone">Phone</label>
+        <input type="text" name="stu_phone number" id="phone number" placeholder="Enter your Ph no." required><br><br>
+        <label for="passport">Passport</label>
+        <input type="file" name="stu_passport" id="passport" accept="imag/*"><br><br>
+        <label for="year">Year</label>
+        <select name="stu_year" id="year">
+            <option value="first">First Year</option>
+            <option value="second">Second Year</option>
+            <option value="third">Third year</option>
+        </select><br><br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+        <input type="radio" name="gender" id="other"><label for="other">Other</label><br><br>
+        <button type="submit">Save</button>
+    </form>
+
+</body>
+</html>
