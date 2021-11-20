@@ -19,9 +19,27 @@
     </form>
 
     <script>
+
         function result(){
-            alert("Hello");
+            //alert("Hello");
+            let c = document.myForm.c.value;
+            console.log(c);
+            let java =document.myForm.java.value;
+            console.log(java);
+            let js = document.myForm.js.value;
+            console.log(js);
+
+            // && AND
+            // || OR
+            // ! NOT
+
+            if(c > 80 || java > 80 || js >80 ){
+              document.write("<h1>This student is honored!</h1>") 
+            }else{
+               document.write("<h1>This student is unhonored!</h1>")
+            }
         }
     </script>
+    
 </body>
 </html>
