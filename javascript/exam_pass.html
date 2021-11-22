@@ -32,25 +32,36 @@
             // && AND
             // || OR
             // ! NOT
-
-            // if (c >=50 && java >= 50 && js >= 50)
-            //    if (c>80 || java > 80 || js > 80){
-            //        document.write("<h1>Distinction!</h1>");
-            //        else{
-            //     document.write("<h1>Pass</h1>");
+            
+            // if(c<50 || java<50 || js<50){
+            //     document.write("<h1>Fail!</h1>");
+            // }  
+            // else if(c>=50 && c>80 || java>=50 && java>80 || js>=50 && js>80){
+            //     document.write("<h1>Distinction!</h1>");
             // }else{
-            //     document.write("<h1>Failed</h1>")
+            //     document.write("<h1>Passed!</h1>");     
             // }
-              
-            if(c<50 || java<50 || js<50){
-                document.write("<h1>Fail!</h1>");
-            }  
-            else if(c>=50 && c>80 || java>=50 && java>80 || js>=50 && js>80){
-                document.write("<h1>Distinction!</h1>");
-            }else{
-                document.write("<h1>Passed!</h1>");     
+
+            if (c >= 50 && c > 80 && java >=50 && java > 80 && js >=50 && js > 80){
+                    document.write("<h1>All pass with distinction</h1>");         
             }
-        }
+            if(c > 80 && c> 50 && java > 50 && js > 50){
+                document.write(`<h1>You pass the exam with ${c} marks Turbo C distinction<h1>`);
+            }       
+            if ( java > 80 && java > 50 && c >50 && js > 50){        
+                document.write(`<h1>You pass the exam with ${java} marks Java distinction<h1>`);
+            }
+            if ( js > 80 && js > 50 && c > 50 && java && 50){
+                document.write(`<h1>You pass the exam with ${js} marks Java Script distinction<h1>`);
+           }
+            if( c > 50 && java > 50 && js > 50){
+                document.write("<h1>Passed</h1>");
+            }else{
+                document.write("<h1>Failed</h1>");
+            }
+         }
+            
+        
     </script>
     
 </body>
