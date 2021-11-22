@@ -32,14 +32,22 @@
             // && AND
             // || OR
             // ! NOT
+
+            // if (c >=50 && java >= 50 && js >= 50)
+            //    if (c>80 || java > 80 || js > 80){
+            //        document.write("<h1>Distinction!</h1>");
+            //        else{
+            //     document.write("<h1>Pass</h1>");
+            // }else{
+            //     document.write("<h1>Failed</h1>")
+            // }
               
             if(c<50 || java<50 || js<50){
                 document.write("<h1>Fail!</h1>");
             }  
             else if(c>=50 && c>80 || java>=50 && java>80 || js>=50 && js>80){
                 document.write("<h1>Distinction!</h1>");
-            }
-            else{
+            }else{
                 document.write("<h1>Passed!</h1>");     
             }
         }
