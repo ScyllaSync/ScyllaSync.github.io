@@ -41,23 +41,56 @@
             // }else{
             //     document.write("<h1>Passed!</h1>");     
             // }
-
-            if (c >= 50 && c > 80 && java >=50 && java > 80 && js >=50 && js > 80){
-                    document.write("<h1>All pass with distinction</h1>");         
-            }
-            if(c > 80 && c> 50 && java > 50 && js > 50){
-                document.write(`<h1>You pass the exam with ${c} marks Turbo C distinction<h1>`);
-            }       
-            if ( java > 80 && java > 50 && c >50 && js > 50){        
-                document.write(`<h1>You pass the exam with ${java} marks Java distinction<h1>`);
-            }
-            if ( js > 80 && js > 50 && c > 50 && java && 50){
-                document.write(`<h1>You pass the exam with ${js} marks Java Script distinction<h1>`);
-           }
-            if( c > 50 && java > 50 && js > 50){
-                document.write("<h1>Passed</h1>");
-            }else{
-                document.write("<h1>Failed</h1>");
+            if (c >= 50 && java >= 50 && js >= 50) {
+        if (c > 80 && java > 80 && js > 80) {
+            document.write("<h1>Distinction Mark in All Subject!</h1>");
+            document.write(`<h2>C mark - ${c} </h2>`);
+            document.write(`<h2>Java mark - ${java} </h2>`);
+            document.write(`<h2>JavaScript mark - ${js} </h2>`);
+                            
+            } 
+            else if (c > 80 || java > 80 || js > 80) {
+                    if (c > 80) {
+                        document.write("<h1>Distinction in Turbo C!</h1>");
+                        document.write(`<h2>C mark - ${c} </h2>`);
+                    }
+                    if (java > 80) {
+                        document.write("<h1>Distinction in Java!</h1>");
+                        document.write(`<h2>Java mark - ${java} </h2>`);
+                    }
+                    if (js > 80) {
+                        document.write("<h1>Distinction in JavaScript!</h1>");
+                        document.write(`<h2>JavaScript mark - ${js} </h2>`);
+                    }
+                } 
+                
+            else {
+                        document.write("<h1>Pass in All Subject!</h1>");
+                        document.write(`<h2>C mark - ${c} </h2>`);
+                        document.write(`<h2>Java mark - ${java} </h2>`);
+                        document.write(`<h2>JavaScript mark - ${js} </h2>`);
+                }
+            } 
+            else {
+                if (c < 50 && java < 50 && js < 50) {
+                        document.write("<h1>Fail in All Subject!</h1>");
+                        document.write(`<h2>C mark - ${c} </h2>`);
+                        document.write(`<h2>Java mark - ${java} </h2>`);
+                        document.write(`<h2>JavaScript mark - ${js} </h2>`);
+                } else {
+                    if (c < 50) {
+                        document.write("<h1>Fail in Turbo C!</h1>");
+                        document.write(`<h2>C mark - ${c} </h2>`);
+                    }
+                    if (java < 50) {
+                        document.write("<h1>Fail in Java!</h1>");
+                        document.write(`<h2>Java mark - ${java} </h2>`);
+                    }
+                    if (js < 50) {
+                        document.write("<h1>Fail in JavaScript!</h1>");
+                        document.write(`<h2>JavaScript mark - ${js} </h2>`);
+                    }
+                }
             }
          }
             
