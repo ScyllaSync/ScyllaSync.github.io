@@ -220,6 +220,7 @@ div.floatright img{
     width: 40%;
     float: right;
 }
+/* grid */
 .gridOne div,.gridTwo div,.gridThree div,.gridFour div,.gridFive div,.gridSix div{
     padding: 20px;
     text-align: center;
