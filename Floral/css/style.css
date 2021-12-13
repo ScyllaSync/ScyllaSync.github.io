@@ -1,3 +1,4 @@
+/* Home page start */
 *{
     margin: Opx;
     padding: 0px;
@@ -151,3 +152,17 @@
     padding-top: 30px;
     padding-left: 30px;
 }
+.footer{
+    height: 230px;
+    background-color: rgb(76, 76, 197);
+}
+.footnav{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 50px 20px 0px;
+}
+.socialicon{
+    color: white;
+}
+/* Home page end */
