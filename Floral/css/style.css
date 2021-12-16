@@ -166,3 +166,55 @@
     color: white;
 }
 /* Home page end */
+/* Shop page start */
+.shop_image{
+    float: left;
+    width: 5in;
+    height: 5inpx;
+    padding-right: 20px;
+}
+.button{
+    width: 50px;
+    height: 40px;
+    color: brown;
+}
+.shop_grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.shop_grid1{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.Top_header{
+    text-align: center;
+}
+.underline{
+    max-width: 3in;
+}
+.Available_pro{
+    text-align: center;
+}
+.underline1{
+    max-width: 3in;
+}
+.div_body{
+    background-image:url(../images/contactus.jpg);
+    height: 3.5in;
+}
+.contact_header{
+    color: white;
+}
+.label{
+    color: white;
+}
+.about_body{
+    background-color: rgb(218, 211, 211);
+}
+.div_body{
+    background-image: url(../images/aboutus.jpg);
+}
