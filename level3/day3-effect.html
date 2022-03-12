@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $ (function(param){
+            $("#hide").on('click',function(){
+                $("p").hide(4000);
+            })
+            $("#show").on('click',function(){
+                $("p").show("fast");
+            })
+            $("#toggle").on('click',function(){
+                $("p").toggle("slow");
+            })
+            $("#fadein").on('click',function(){
+                $("p").fadeIn();
+            })
+            $("#fadeout").on('click',function(){
+                $("p").fadeOut();
+            })
+            $("#fadetoggle").on('click',function(){
+                $("p").fadeToggle();
+            })
+            $("#fadeto").on('click',function(){
+                $("#mydiv").fadeTo("slow",0.5);
+            })
+            $("#slidedown").on('click',function(){
+                $("p").slideDown("fast");
+            })
+            $("#slideup").on('click',function(){
+                $("p").slideUp("fast");
+            })
+            $("#slidetoggle").on('click',function(){
+                $("p").slideToggle("fast");
+            })
+            $("#animateone").on('click',function(){
+                $("#mydiv").animate({left:'200px'});
+            })
+            $("#animatetwo").on('click',function(){
+                $("#mydiv").animate({
+                    left:'200px',
+                    height:'+=150px',
+                    width:'+=150px',
+                });
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci doloribus quis ipsam amet accusamus quasi odio dolorum non ipsa a, quos reprehenderit sed consequatur quidem, corrupti quibusdam quod asperiores maiores!
+    </p>
+    <div id="mydiv" style="width: 100px; height: 100px; background-color: red;position: relative;" ></div>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadein">Fade In</button>
+    <button id="fadeout">Fade Out</button>
+    <button id="fadetoggle">Fade Toggle</button>
+    <button id="fadeto">Fade To</button>
+    <button id="slidedown">Slide Down</button>
+    <button id="slideup">Slide Up</button>
+    <button id="slidetoggle">Slide Toggle</button>
+    <button id="animateone">Animate One</button>
+    <button id="animatetwo">Animate Two</button>
+    <br>
+</body>
+</html>
