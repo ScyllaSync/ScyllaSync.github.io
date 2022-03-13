@@ -1,0 +1,51 @@
+Product in Supermarket
+
+Item Code--------------(Primary Key)
+Product Name
+Quantity
+Weight
+Shelf Life
+Storage Conditions
+Country of Orign
+_____________________________________________________________
+Employee in Company
+
+Employee ID-----------------------------(Primary Key)        
+Name
+Address
+NRC ------------------------------------(Secondary Key)
+Phone Number---------------------------(Secondary Key)
+Email-----------------------------------(Secondary Key)
+Date of Birth
+Gender
+Photo
+Job Title
+Department
+Hire date
+Salary
+Qualification 
+Contract
+_______________________________________________________________
+Patient in Hospital
+
+Patient's ID ------------------------(Primary Key)
+Name
+Phone No.----------------------------(Secondary Key)
+Date of Birth
+Gender
+Dates of Admission and Discharge
+Name of the Disease
+Details of Treatment
+Doctor's Name
+________________________________________________________________
+Student in College
+
+Student ID-------------------------(Primary Key)
+Name
+NRC--------------------------------(Secondary Key)
+Email------------------------------(Secondary Key)
+Photo
+Date of Birth
+Year of Graduation
+Department
+Gender

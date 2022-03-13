@@ -1,0 +1,58 @@
+ASSIGNMENT 1
+
+CREATE DATABASE employee_db;
+CREATE TABLE employee
+(
+employeeNumber INT PRIMARY KEY,
+employeeName VARCHAR(30) NOT NULL,
+date_of_birth DATE,
+salary DECIMAL(8,2)
+);
+DESC employee;
+_____________________________________________________________________________________________________________
+
+ASSIGNMENT 2 (SALESPEOPLE)
+
+CREATE DATABASE salesPeople_db;
+CREATE TABLE salesPeople
+(
+Snum INT PRIMARY KEY,
+Sname VARCHAR(50) NOT NULL,
+City VARCHAR(50),
+Comm DECIMAL(3,2)
+);
+DESC salesPeople;
+_____________________________________________________________________________________________________________
+
+ASSIGNMENT 2 (CUSTOMERS)
+
+CREATE DATABASE customers_db;
+CREATE TABLE customers
+(
+Cnum INT PRIMARY KEY,
+Cname VARCHAR(50) NOT NULL,
+City VARCHAR(50),
+Rating INT,
+Snum INT NOT NULL UNIQUE
+);
+DESC customers;
+_____________________________________________________________________________________________________________
+
+ASSIGNMENT 2 (ORDERS)
+
+CREATE DATABASE orders_db;
+CREATE TABLE orders
+(
+Onum INT PRIMARY KEY,
+Amt DECIMAL(7,2) NOT NULL,
+Odate DATE NOT NULL,
+Cnum INT NOT NULL UNIQUE,
+Snum INT NOT NULL UNIQUE
+);
+DESC orders;
+_______________________________________________________________________________________________________________
+
+
+
+
+
