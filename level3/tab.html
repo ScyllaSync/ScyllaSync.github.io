@@ -37,9 +37,9 @@
             display: none;
         }
 
-        #myshop {
+        .grid-container {
             display: grid;
-            grid-template-columns: auto auto auto;
+            grid-template-columns:auto auto auto;
         }
 
         h4 {
@@ -61,6 +61,73 @@
 
                    event.preventDefault();
                })
+               //Save to Local storage
+               $('.atc').on("click",function(params){
+                   var name = $(this).data("name");
+                   var price = $(this).data("price");
+                   var id = $(this).data("id");
+
+                   var item = {id : id ,name : name, price : price, qty:1}
+
+                   var cartArr = [];
+                   var cartStr = localStorage.getItem("mycart");
+                   if (!cartStr){
+                       cartArr.push(item)
+                   }else{
+                       cartArr = JSON.parse(cartStr)
+
+                       var old = false;
+
+                       $.each(cartArr,function(i,v){
+                           if(v.id == id && old==false){
+                               v.qty ++;
+                               old = true
+                           }
+                       })
+
+                       if ( old == false){
+                           cartArr.push(item)
+                       }
+                   }
+
+                   localStorage.setItem("mycart",JSON.stringify(cartArr));
+                   cartnoti();
+                   showData();
+               })
+               //Cart Notification
+               cartnoti();
+               function cartnoti(){
+                   var cartStr = localStorage.getItem("mycart");
+                   var noticount = 0
+                   if ( cartStr ){
+                       var cartArr = JSON.parse(cartStr);
+                       $.each(cartArr,function(i,v) {
+                           noticount+=v.qty;
+                       })
+                   }
+                   $("#cartnoti").html(noticount);
+               }
+
+               //Cart Table
+               showData();
+               function showData(){
+                var cartStr = localStorage.getItem("mycart");
+                var data = ""
+                if (cartStr){
+                    var cartArr = JSON.parse(cartStr);
+                    $.each(cartArr,function(i,v){
+                        data += `<tr>
+                                   <td>${++i}</td>
+                                   <td>${v.name}</td>
+                                   <td>${v.price}</td>
+                                   <td>${v.qty}</td>
+                                   <td>${v.price * v.qty}</td>
+                                </tr>`
+                    })
+                }
+                $("#tbody").html(data)
+            }
+            
         })
     </script>
 </head>
@@ -78,6 +145,9 @@
             </li>
             <li>
                 <a href="#shop">Shop</a>
+            </li>
+            <li>
+                <a href="#cart">Cart</a> <span id="cartnoti" style="color: red;"></span>
             </li>
         </ul>
 
@@ -97,40 +167,57 @@
         </div>
 
         <div class="content" id="shop">
-            <h3>Shop</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui libero exercitationem dolor velit inventore praesentium aliquam neque voluptas nam fuga dignissimos ad vel beatae tempora perferendis nostrum, adipisci accusantium consequatur!</p>
-            <hr>
-            <div id="myshop">
-                <div>
-                    <img src="images/pic1.jpg" alt="" width="200px" height="200px">
-                    <h4>Flower One</h4>
+            <h2>Shop Page</h2>
+            <br>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="country">
+                        <img src="images/pic1.jpg" alt=""width="100px" height="100px">
+                        <div class="country-info">
+                            <h5 class="name">Item one</h5>
+                            <p>Price : 3000</p>
+                            <button class="atc" data-name="Item One" data-price="3000" data-id="1">Add to cart</button>
+                        </div>
+                    </div>
                 </div>
-    
-                <div>
-                    <img src="images/pic2.jpg" alt=""  width="200px" height="200px">
-                    <h4>Flower Two</h4>
+
+                <div class="grid-item">
+                    <div class="country">
+                        <img src="images/pic2.jpg" alt=""width="100px" height="100px">
+                        <div class="country-info">
+                            <h5 class="name">Item two</h5>
+                            <p>Price : 3000</p>
+                            <button class="atc"data-name="Item Two" data-price="3000" data-id="2">Add to cart</button>
+                        </div>
+                    </div>
                 </div>
-    
-                <div>
-                    <img src="images/pic3.jpg" alt="" width="200px" height="200px">
-                    <h4>Flower Three</h4>
-                </div>
-    
-                <div>
-                    <img src="images/pic4.jpg" alt="" width="200px" height="200px">
-                    <h4>Flower Four</h4>
-                </div>
-    
-                <div>
-                    <img src="images/pic5.jpg" alt="" width="200px" height="200px">
-                    <h4>Flower Five</h4>
-                </div>
-    
-                <div>
-                    <img src="images/pic6.jpg" alt="" width="200px" height="200px">
-                    <h4>Flower Six</h4>
+
+                <div class="grid-item">
+                    <div class="country">
+                        <img src="images/pic3.jpg" alt="" width="100px" height="100px" >
+                        <div class="country-info">
+                            <h5 class="name">Item three</h5>
+                            <p>Price : 3000</p>
+                            <button class="atc"data-name="Item Three" data-price="3000" data-id="3">Add to cart</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="content" id="cart">
+            <h3>Cart Page</h3>
+            <table width="100%" border="1" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
         </div>
     </div>
 </body>
