@@ -11,11 +11,45 @@
     <h1>Hello{{name}},Vue</h1>
 
     <div id="app">
-        <h3>
-            {{name}} - {{age}}
+        <h3 v-if="status">
+            {{name}} - {{age}} - <span v-html="icon"></span>
         </h3>
-    </div>
+        <h3 v-else>
+            status => {{status}}
+        </h3>
 
+        <p v-bind:title="title">Lorem ipsum olor sit, amet consectetur adipisicing elit. Blanditiis praesentium laboriosam beatae quos, natus itaque doloribus distinctio quae quaerat accusantium? Voluptas, ducimus ea fugiat a voluptatem ipsa minus provident laboriosam?</p>
+        <img v-bind:src="photo" alt="">
+
+        <p v-if="mark>=40 && mark<80">Pass</p>
+        <p v-else-if="mark<40">Fail</p>
+        <p v-else>Distinction</p>
+
+        <h2>My fav fruits</h2>
+        <ul>
+            <li v-for="fruit in favfruits">{{fruit}}</li>
+        </ul>
+
+        <button @click="count++">Add 1</button>
+        <p>Count is:{{count}}</p>
+        <button @click="greet">Greet</button><br>
+
+        <input type="text" v-model="fname">
+        <span>{{fname}}</span>
+
+        <form action="" >
+            <input type="text" v-model.trim="ffname"><br>
+            <input type="number" v-model.number="ffage"><br>
+
+            <input type="radio" id="one" value="Male" v-model="ffgender">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" value="Female" v-model="ffgender">
+            <label for="female">Female</label><br>
+
+            <input type="submit" value="save">
+        </form>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
