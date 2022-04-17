@@ -1,0 +1,13 @@
+components
+  - part of website
+  - .vue
+  - HTML / CSS / JS
+
+View
+ - 8080       -> Home (components)
+ - 8080/about -> About(components)
+
+-App.vue
+ - About.vue
+ - Home.vue
+   - HelloWorld.vue
